@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private float angle;
 
+    public Transform tiltAnchor;
+    public Transform buttonAnchor;
+
     private Queue<float> prevHeights;
 
     void Start()
@@ -60,6 +63,11 @@ public class PlayerController : MonoBehaviour
             prevHeights.Dequeue();
         }
 
+        //tiltAnchor.up = Vector3.ProjectOnPlane(lean, Vector3.forward).normalized;
+        //tiltAnchor.eulerAngles = Vector3.up * 20 * xAxis;
+        float leanAngle = (xAxis < 0 ? 1 : -1) * Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(lean, Vector3.forward));
+        tiltAnchor.localEulerAngles = new Vector3(0, 0, leanAngle);
+
         if (xAxis < -0.2f)
         {
             angle = (angle - 30 * Time.deltaTime) % 360;
@@ -81,7 +89,8 @@ public class PlayerController : MonoBehaviour
             speed = Mathf.Lerp(speed, 0, Time.deltaTime);
         }
 
+        Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
         transform.eulerAngles = Vector3.up * angle;
-        rigidbody.velocity = transform.forward * speed;
+        rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
     }
 }
