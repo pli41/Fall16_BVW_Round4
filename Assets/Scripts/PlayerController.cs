@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public CubemanController controller;
     public float maxSpeed;
+    public float jumpStrength;
+    public float jumpDelay;
 
     private new Rigidbody rigidbody;
 
@@ -18,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private float speed;
     private float angle;
+    private float buttonSpin;
+    private float lastJumpTime;
 
     public Transform tiltAnchor;
     public Transform buttonAnchor;
@@ -56,15 +60,18 @@ public class PlayerController : MonoBehaviour
             
             if (height - avgPrevHeight > 0.1f)
             {
-                Debug.Log("Jump");
+                if (Time.time - lastJumpTime > jumpDelay)
+                {
+                    rigidbody.velocity += jumpStrength * Vector3.up;
+                    lastJumpTime = Time.time;
+                }
             }
 
             prevHeights.Enqueue(height);
             prevHeights.Dequeue();
         }
-
-        //tiltAnchor.up = Vector3.ProjectOnPlane(lean, Vector3.forward).normalized;
-        //tiltAnchor.eulerAngles = Vector3.up * 20 * xAxis;
+        
+        // Tilt the button when turning
         float leanAngle = (xAxis < 0 ? 1 : -1) * Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(lean, Vector3.forward));
         tiltAnchor.localEulerAngles = new Vector3(0, 0, leanAngle);
 
@@ -89,6 +96,11 @@ public class PlayerController : MonoBehaviour
             speed = Mathf.Lerp(speed, 0, Time.deltaTime);
         }
 
+        // Spin the button based on the speed
+        buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
+        buttonAnchor.localEulerAngles = Vector3.right * buttonSpin;
+
+        // Set the speed of the button
         Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
         transform.eulerAngles = Vector3.up * angle;
         rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
