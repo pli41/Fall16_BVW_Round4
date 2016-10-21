@@ -75,21 +75,17 @@ public class PlayerController : MonoBehaviour
         float leanAngle = (xAxis < 0 ? 1 : -1) * Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(lean, Vector3.forward));
         tiltAnchor.localEulerAngles = new Vector3(0, 0, leanAngle);
 
-        if (xAxis < -0.2f)
+        // Turn the button
+        angle = (angle + xAxis * 180 * Time.deltaTime) % 360;
+
+        // Accelerate/Decelerate the button
+        if (zAxis < -0.05f) // Forward
         {
-            angle = (angle - 30 * Time.deltaTime) % 360;
+            speed = Mathf.Min(maxSpeed, speed - zAxis * 5 * Time.deltaTime);
         }
-        else if (xAxis > 0.2f)
+        else if (zAxis > 0.1f) // Backward
         {
-            angle = (angle + 30 * Time.deltaTime) % 360;
-        }
-        else if (zAxis < -0.1f)
-        {
-            speed = Mathf.Min(maxSpeed, speed + 0.5f * Time.deltaTime);
-        }
-        else if (zAxis > 0.2f)
-        {
-            speed = Mathf.Max(-maxSpeed, speed - 0.5f * Time.deltaTime);
+            speed = Mathf.Max(-maxSpeed, speed - zAxis * 3 * Time.deltaTime);
         }
         else
         {
