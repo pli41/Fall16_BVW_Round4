@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
                 if (Time.time - lastJumpTime > jumpDelay)
                 {
                     rigidbody.velocity += jumpStrength * Vector3.up;
+                    speed = Mathf.Max(speed, 3f);
                     lastJumpTime = Time.time;
                 }
             }
@@ -79,17 +80,17 @@ public class PlayerController : MonoBehaviour
         angle = (angle + xAxis * 180 * Time.deltaTime) % 360;
 
         // Accelerate/Decelerate the button
-        if (zAxis < -0.05f) // Forward
+        if (zAxis < 0) // Forward
         {
             speed = Mathf.Min(maxSpeed, speed - zAxis * 5 * Time.deltaTime);
         }
-        else if (zAxis > 0.1f) // Backward
+        else if (zAxis > 0.2f) // Backward
         {
             speed = Mathf.Max(-maxSpeed, speed - zAxis * 3 * Time.deltaTime);
         }
         else
         {
-            speed = Mathf.Lerp(speed, 0, Time.deltaTime);
+            speed = Mathf.Lerp(speed, 0, 0.5f*Time.deltaTime);
         }
 
         // Spin the button based on the speed
