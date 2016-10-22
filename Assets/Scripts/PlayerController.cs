@@ -113,6 +113,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             angle = Mathf.Clamp(angle + xAxis * 180 * Time.deltaTime, 150, 210);
+            speed = 0;
             transform.eulerAngles = Vector3.up * angle;
             rigidbody.velocity = Vector3.zero;
         }
