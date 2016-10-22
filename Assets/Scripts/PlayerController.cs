@@ -11,6 +11,13 @@ public class PlayerController : MonoBehaviour
     public float jumpStrength;
     public float jumpDelay;
 
+    public Transform tiltAnchor;
+    public Transform buttonAnchor;
+
+    public GameObject bird;
+    
+    public bool canMove { get; set; }
+
     private new Rigidbody rigidbody;
 
     private Transform head;
@@ -19,12 +26,9 @@ public class PlayerController : MonoBehaviour
     private Transform footR;
 
     private float speed;
-    private float angle;
+    public float angle { get; set; }
     private float buttonSpin;
     private float lastJumpTime;
-
-    public Transform tiltAnchor;
-    public Transform buttonAnchor;
 
     private Queue<float> prevHeights;
 
@@ -36,6 +40,7 @@ public class PlayerController : MonoBehaviour
         footL = controller.Foot_Left.transform;
         footR = controller.Foot_Right.transform;
         prevHeights = new Queue<float>();
+        canMove = true;
     }
 
     void Update()
@@ -49,57 +54,75 @@ public class PlayerController : MonoBehaviour
         float xAxis = leanDirection.x;
         float zAxis = leanDirection.z;
 
-        float height = hip.position.y;
-        if (prevHeights.Count < 60)
+        if (canMove)
         {
-            prevHeights.Enqueue(height);
-        }
-        else
-        {
-            float avgPrevHeight = prevHeights.Sum() / prevHeights.Count();
-            
-            if (height - avgPrevHeight > 0.1f)
+            float height = hip.position.y;
+            if (prevHeights.Count < 60)
             {
-                if (Time.time - lastJumpTime > jumpDelay)
+                prevHeights.Enqueue(height);
+            }
+            else
+            {
+                float avgPrevHeight = prevHeights.Sum() / prevHeights.Count();
+
+                if (height - avgPrevHeight > 0.1f)
                 {
-                    rigidbody.velocity += jumpStrength * Vector3.up;
-                    speed = Mathf.Max(speed, 3f);
-                    lastJumpTime = Time.time;
+                    if (Time.time - lastJumpTime > jumpDelay)
+                    {
+                        rigidbody.velocity += jumpStrength * Vector3.up;
+                        speed = Mathf.Max(speed, 3f);
+                        lastJumpTime = Time.time;
+                    }
                 }
+
+                prevHeights.Enqueue(height);
+                prevHeights.Dequeue();
             }
 
-            prevHeights.Enqueue(height);
-            prevHeights.Dequeue();
-        }
-        
-        // Tilt the button when turning
-        float leanAngle = (xAxis < 0 ? 1 : -1) * Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(lean, Vector3.forward));
-        tiltAnchor.localEulerAngles = new Vector3(0, 0, leanAngle);
+            // Tilt the button when turning
+            float leanAngle = (xAxis < 0 ? 1 : -1) * Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(lean, Vector3.forward));
+            tiltAnchor.localEulerAngles = new Vector3(0, 0, leanAngle);
 
-        // Turn the button
-        angle = (angle + xAxis * 180 * Time.deltaTime) % 360;
+            // Turn the button
+            angle = (angle + xAxis * 180 * Time.deltaTime) % 360;
 
-        // Accelerate/Decelerate the button
-        if (zAxis < 0) // Forward
-        {
-            speed = Mathf.Min(maxSpeed, speed - zAxis * 5 * Time.deltaTime);
+            // Accelerate/Decelerate the button
+            if (zAxis < 0) // Forward
+            {
+                speed = Mathf.Min(maxSpeed, speed - zAxis * 5 * Time.deltaTime);
+            }
+            else if (zAxis > 0.2f) // Backward
+            {
+                speed = Mathf.Max(-maxSpeed, speed - zAxis * 3 * Time.deltaTime);
+            }
+            else
+            {
+                speed = Mathf.Lerp(speed, 0, 0.5f * Time.deltaTime);
+            }
+
+            // Spin the button based on the speed
+            buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
+            buttonAnchor.localEulerAngles = Vector3.right * buttonSpin;
+
+            // Set the speed of the button
+            Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
+            transform.eulerAngles = Vector3.up * angle;
+            rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
         }
-        else if (zAxis > 0.2f) // Backward
-        {
-            speed = Mathf.Max(-maxSpeed, speed - zAxis * 3 * Time.deltaTime);
-        }
+
         else
         {
-            speed = Mathf.Lerp(speed, 0, 0.5f*Time.deltaTime);
+            angle = Mathf.Clamp(angle + xAxis * 180 * Time.deltaTime, 150, 210);
+            transform.eulerAngles = Vector3.up * angle;
+            rigidbody.velocity = Vector3.zero;
         }
+    }
 
-        // Spin the button based on the speed
-        buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
-        buttonAnchor.localEulerAngles = Vector3.right * buttonSpin;
-
-        // Set the speed of the button
-        Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
-        transform.eulerAngles = Vector3.up * angle;
-        rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
+    void OnTriggerEnter (Collider other)
+    {
+        if (LayerMask.NameToLayer("EventTrigger") == other.gameObject.layer)
+        {
+            bird.SetActive(true);
+        }
     }
 }
