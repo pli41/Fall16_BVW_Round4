@@ -1,15 +1,39 @@
 fileFormatVersion: 2
-guid: cc384076695ba9b4b8a9b82ee5a6a3b5
-timeCreated: 1477078814
+guid: 39b004260152e4042875a408327e0aa4
+timeCreated: 1477153100
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCylinder1
+    100000: Fan1
+    100002: Fan2
+    100004: mainBody
+    100006: pipe
+    100008: TailorHouse
+    100010: //RootNode
+    100012: VentMachine
+    400000: Fan1
+    400002: Fan2
+    400004: mainBody
+    400006: pipe
+    400008: TailorHouse
+    400010: //RootNode
+    400012: VentMachine
+    2300000: Fan1
+    2300002: Fan2
+    2300004: mainBody
+    2300006: pipe
+    2300008: TailorHouse
+    3300000: Fan1
+    3300002: Fan2
+    3300004: mainBody
+    3300006: pipe
+    3300008: TailorHouse
+    4300000: TailorHouse
+    4300002: pipe
+    4300004: mainBody
+    4300006: Fan2
+    4300008: Fan1
     9500000: //RootNode
   materials:
     importMaterials: 0
