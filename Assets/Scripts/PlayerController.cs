@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public Transform buttonAnchor;
 
     public GameObject bird;
-    
+
     public bool canMove { get; set; }
 
     private new Rigidbody rigidbody;
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (LayerMask.NameToLayer("EventTrigger") == other.gameObject.layer)
         {
@@ -137,12 +137,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter (Collision other)
+    void OnCollisionEnter(Collision other)
     {
         SoundEffects sfx = other.gameObject.GetComponent<SoundEffects>();
         if (sfx != null)
         {
             SfxManager.PlaySfx(sfx.id);
+        }
+    }
+
+    void OnCollisionStay (Collision other) {
+        SoundEffects sfx = other.gameObject.GetComponent<SoundEffects>();
+        if (sfx != null)
+        {
+            SfxManager.PlayLoop(sfx.id);
+        }
+        else
+        {
+            SfxManager.StopLoop(sfx.id);
         }
     }
 }
