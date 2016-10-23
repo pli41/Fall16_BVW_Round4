@@ -136,4 +136,13 @@ public class PlayerController : MonoBehaviour
             bird.SetActive(true);
         }
     }
+
+    void OnCollisionEnter (Collision other)
+    {
+        SoundEffects sfx = other.gameObject.GetComponent<SoundEffects>();
+        if (sfx != null)
+        {
+            SfxManager.PlaySfx(sfx.id);
+        }
+    }
 }
