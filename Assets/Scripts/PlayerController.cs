@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq; // Select (Map), Aggregate (Reduce), Where (Filter)
+using UsefulThings;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,6 +46,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //SfxManager.PlaySfx(0);
+            //SfxManager.PlayLoop(0);
+        } else if (Input.GetKeyDown(KeyCode.A))
+        {
+            //SfxManager.StopLoop(0);
+        }
+
         Debug.DrawLine(hip.position, head.position, Color.blue);
         Vector3 lean = head.position - hip.position;
 
