@@ -26,6 +26,9 @@ public class BirdMovement : MonoBehaviour {
             player.GetComponent<Rigidbody>().isKinematic = false;
             player.canMove = true;
             hasEnded = true;
+        } else if ((Time.time - birdStartTime) * 0.1f >= 2.5f)
+        {
+            gameObject.SetActive(false);
         }
 	}
 

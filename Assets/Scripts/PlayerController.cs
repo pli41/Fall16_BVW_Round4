@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Transform buttonAnchor;
 
     public GameObject bird;
+    public GameObject ending;
 
     public bool canMove { get; set; }
 
@@ -52,7 +53,8 @@ public class PlayerController : MonoBehaviour
         {
             //SfxManager.PlaySfx(0);
             //SfxManager.PlayLoop(0);
-        } else if (Input.GetKeyDown(KeyCode.A))
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
         {
             //SfxManager.StopLoop(0);
         }
@@ -140,33 +142,52 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Finish"))
         {
+            speed = 0;
             gameObject.transform.position = RespawnPosition;
         }
 
         if (other.gameObject.CompareTag("Respawn"))
         {
             RespawnPosition = gameObject.transform.position;
+        } else if (other.gameObject.CompareTag("EditorOnly"))
+        {
+            ending.SetActive(true);
         }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        SoundEffects sfx = other.gameObject.GetComponent<SoundEffects>();
-        if (sfx != null)
+        SoundEffects[] sfx = other.gameObject.GetComponents<SoundEffects>();
+        foreach(SoundEffects s in sfx)
         {
-            SfxManager.PlaySfx(sfx.id);
+            if (!s.loop)
+            {
+                SfxManager.PlaySfx(s.id);
+            }
         }
     }
 
-    void OnCollisionStay (Collision other) {
-        SoundEffects sfx = other.gameObject.GetComponent<SoundEffects>();
-        if (sfx.id != 0 && gameObject.GetComponent<Rigidbody>().velocity != Vector3.zero)
+    void OnCollisionExit(Collision other)
+    {
+        SoundEffects[] sfx = other.gameObject.GetComponents<SoundEffects>();
+        foreach (SoundEffects s in sfx)
         {
-            SfxManager.PlaySfx(sfx.id);
+            if (s.loop)
+            {
+                SfxManager.StopLoop(s.id);
+            }
         }
-        else
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        SoundEffects[] sfx = other.gameObject.GetComponents<SoundEffects>();
+        foreach (SoundEffects s in sfx)
         {
-            SfxManager.StopLoop(sfx.id);
+            if (s.loop)
+            {
+                SfxManager.PlayLoop(s.id, Mathf.Abs(speed / maxSpeed));
+            }
         }
     }
 }
