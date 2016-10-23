@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private float buttonSpin;
     private float lastJumpTime;
 
+    private Vector3 RespawnPosition;
+
     private Queue<float> prevHeights;
 
     void Start()
@@ -135,6 +137,16 @@ public class PlayerController : MonoBehaviour
         {
             bird.SetActive(true);
         }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            gameObject.transform.position = RespawnPosition;
+        }
+
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            RespawnPosition = gameObject.transform.position;
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -148,9 +160,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionStay (Collision other) {
         SoundEffects sfx = other.gameObject.GetComponent<SoundEffects>();
-        if (sfx != null)
+        if (sfx.id != 0 && gameObject.GetComponent<Rigidbody>().velocity != Vector3.zero)
         {
-            SfxManager.PlayLoop(sfx.id);
+            SfxManager.PlaySfx(sfx.id);
         }
         else
         {
