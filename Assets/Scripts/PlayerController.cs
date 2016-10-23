@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
                         rigidbody.velocity += jumpStrength * Vector3.up;
                         speed = Mathf.Max(speed, 3f);
                         lastJumpTime = Time.time;
+                        SfxManager.PlaySfx(1);
                     }
                 }
 
