@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
         {
             RespawnPosition = other.gameObject.transform.position;
         }
-        else if (other.gameObject.CompareTag("EditorOnly"))
+        else if (other.gameObject.CompareTag("EndGame"))
         {
             ending.SetActive(true);
         }
