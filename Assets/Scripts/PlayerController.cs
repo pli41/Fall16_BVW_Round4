@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Respawn"))
         {
-            RespawnPosition = gameObject.transform.position;
+            RespawnPosition = other.gameObject.transform.position;
         }
         else if (other.gameObject.CompareTag("EditorOnly"))
         {

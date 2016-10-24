@@ -19,6 +19,7 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
+            /*
             RaycastHit rayCastInfo;
             if (Physics.Raycast(target.position, player.transform.position - target.position, out rayCastInfo, 2)) {
                 if (rayCastInfo.transform.gameObject.layer != LayerMask.NameToLayer("Player"))
@@ -26,6 +27,7 @@ public class CameraFollow : MonoBehaviour
                     activeTarget = targetUp;
                 }
             }
+            */
         }
 
         transform.position = Vector3.Lerp(transform.position, activeTarget.position, Time.deltaTime);
