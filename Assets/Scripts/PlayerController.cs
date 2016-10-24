@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float jumpStrength;
     public float jumpDelay;
 
+    public bool keyControls;
+
     public Transform tiltAnchor;
     public Transform buttonAnchor;
 
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public GameObject ending;
 
     public bool canMove { get; set; }
+    public Transform wireTransform { get; set; }
 
     private new Rigidbody rigidbody;
 
@@ -31,6 +34,9 @@ public class PlayerController : MonoBehaviour
     public float angle { get; set; }
     private float buttonSpin;
     private float lastJumpTime;
+
+    private float buttonLean;
+    private float buttonLeanSpeed;
 
     private Vector3 RespawnPosition;
 
@@ -49,16 +55,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //SfxManager.PlaySfx(0);
-            //SfxManager.PlayLoop(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            //SfxManager.StopLoop(0);
-        }
-
         Debug.DrawLine(hip.position, head.position, Color.blue);
         Vector3 lean = head.position - hip.position;
 
@@ -68,63 +64,112 @@ public class PlayerController : MonoBehaviour
         float xAxis = leanDirection.x;
         float zAxis = leanDirection.z;
 
-        if (canMove)
+        if (keyControls)
         {
-            float height = hip.position.y;
-            if (prevHeights.Count < 60)
-            {
-                prevHeights.Enqueue(height);
-            }
-            else
-            {
-                float avgPrevHeight = prevHeights.Sum() / prevHeights.Count();
-
-                if (height - avgPrevHeight > 0.1f)
-                {
-                    if (Time.time - lastJumpTime > jumpDelay)
-                    {
-                        rigidbody.velocity += jumpStrength * Vector3.up;
-                        speed = Mathf.Max(speed, 3f);
-                        lastJumpTime = Time.time;
-                        SfxManager.PlaySfx(1);
-                    }
-                }
-
-                prevHeights.Enqueue(height);
-                prevHeights.Dequeue();
-            }
-
-            // Tilt the button when turning
-            float leanAngle = (xAxis < 0 ? 1 : -1) * Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(lean, Vector3.forward));
-            tiltAnchor.localEulerAngles = new Vector3(0, 0, leanAngle);
-
-            // Turn the button
-            angle = (angle + xAxis * 180 * Time.deltaTime) % 360;
-
-            // Accelerate/Decelerate the button
-            if (zAxis < 0) // Forward
-            {
-                speed = Mathf.Min(maxSpeed, speed - zAxis * 5 * Time.deltaTime);
-            }
-            else if (zAxis > 0.2f) // Backward
-            {
-                speed = Mathf.Max(-maxSpeed, speed - zAxis * 3 * Time.deltaTime);
-            }
-            else
-            {
-                speed = Mathf.Lerp(speed, 0, 0.5f * Time.deltaTime);
-            }
-
-            // Spin the button based on the speed
-            buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
-            buttonAnchor.localEulerAngles = Vector3.right * buttonSpin;
-
-            // Set the speed of the button
-            Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
-            transform.eulerAngles = Vector3.up * angle;
-            rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
+            xAxis = Input.GetAxis("Horizontal");
+            zAxis = -Input.GetAxis("Vertical");
+            lean = Vector3.up;
         }
 
+        if (canMove)
+        {
+
+            // Normal controls
+            if (wireTransform == null)
+            {
+                float height = hip.position.y;
+                if (prevHeights.Count < 60)
+                {
+                    prevHeights.Enqueue(height);
+                }
+                else
+                {
+                    float avgPrevHeight = prevHeights.Sum() / prevHeights.Count();
+
+                    if (height - avgPrevHeight > 0.1f || (keyControls && Input.GetKey(KeyCode.Space)))
+                    {
+                        if (Time.time - lastJumpTime > jumpDelay)
+                        {
+                            rigidbody.velocity += jumpStrength * Vector3.up;
+                            speed = Mathf.Max(speed, 3f);
+                            lastJumpTime = Time.time;
+                            SfxManager.PlaySfx(1);
+                        }
+                    }
+
+                    prevHeights.Enqueue(height);
+                    prevHeights.Dequeue();
+                }
+
+                // Tilt the button when turning
+                float leanAngle = (xAxis < 0 ? 1 : -1) * Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(lean, Vector3.forward));
+                tiltAnchor.localEulerAngles = new Vector3(0, 0, leanAngle);
+
+                // Turn the button
+                angle = (angle + xAxis * 180 * Time.deltaTime) % 360;
+
+                // Accelerate/Decelerate the button
+                if (zAxis < 0) // Forward
+                {
+                    speed = Mathf.Min(maxSpeed, speed - zAxis * 5 * Time.deltaTime);
+                }
+                else if (zAxis > 0.2f) // Backward
+                {
+                    speed = Mathf.Max(-maxSpeed, speed - zAxis * 3 * Time.deltaTime);
+                }
+                else
+                {
+                    speed = Mathf.Lerp(speed, 0, 0.5f * Time.deltaTime);
+                }
+
+                // Spin the button based on the speed
+                buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
+                buttonAnchor.localEulerAngles = Vector3.right * buttonSpin;
+
+                // Set the speed of the button
+                Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
+                transform.eulerAngles = Vector3.up * angle;
+                rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
+            }
+            else
+            {
+                // Accelerate/Decelerate the button
+                if (zAxis < 0) // Forward
+                {
+                    speed = Mathf.Min(maxSpeed, speed - zAxis * 5 * Time.deltaTime);
+                }
+                else if (zAxis > 0.2f) // Backward
+                {
+                    speed = Mathf.Max(0, speed - zAxis * 3 * Time.deltaTime);
+                }
+                else
+                {
+                    speed = Mathf.Lerp(speed, 0, 0.5f * Time.deltaTime);
+                }
+
+                buttonLean += buttonLeanSpeed * Time.deltaTime;
+                buttonLeanSpeed -= xAxis * 90 * Time.deltaTime;
+                buttonLeanSpeed += Mathf.Sign(buttonLeanSpeed) * (1 + speed) * 10 * Time.deltaTime;
+
+                tiltAnchor.localEulerAngles = new Vector3(0, 0, buttonLean);
+
+                Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
+                if (Mathf.Abs(buttonLean) > 45f)
+                {
+                    Debug.Log("Fall");
+                    Physics.IgnoreLayerCollision(LayerMask.NameToLayer("ObstaclePlatform"), LayerMask.NameToLayer("Player"), true);
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(0, wireTransform.eulerAngles.y, 0);
+                    rigidbody.velocity = wireTransform.forward * speed + gravity;
+                }
+
+                // Spin the button based on the speed
+                buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
+                buttonAnchor.localEulerAngles = Vector3.right * buttonSpin;
+            }
+        }
         else
         {
             angle = Mathf.Clamp(angle + xAxis * 180 * Time.deltaTime, 150, 210);
@@ -144,13 +189,17 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Finish"))
         {
             speed = 0;
+            buttonLean = 0;
+            buttonLeanSpeed = 0;
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("ObstaclePlatform"), LayerMask.NameToLayer("Player"), false);
             gameObject.transform.position = RespawnPosition;
         }
 
         if (other.gameObject.CompareTag("Respawn"))
         {
             RespawnPosition = gameObject.transform.position;
-        } else if (other.gameObject.CompareTag("EditorOnly"))
+        }
+        else if (other.gameObject.CompareTag("EditorOnly"))
         {
             ending.SetActive(true);
         }
@@ -159,7 +208,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         SoundEffects[] sfx = other.gameObject.GetComponents<SoundEffects>();
-        foreach(SoundEffects s in sfx)
+        foreach (SoundEffects s in sfx)
         {
             if (!s.loop)
             {
