@@ -150,16 +150,17 @@ public class PlayerController : MonoBehaviour
                     speed = Mathf.Lerp(speed, 0, 0.5f * Time.deltaTime);
                 }
 
+                Debug.Log(xAxis);
+
                 buttonLean += buttonLeanSpeed * Time.deltaTime;
-                buttonLeanSpeed -= xAxis * 90 * Time.deltaTime;
-                buttonLeanSpeed += Mathf.Sign(buttonLeanSpeed) * (1 + speed) * 10 * Time.deltaTime;
+                buttonLeanSpeed -= xAxis * 100 * Time.deltaTime;
+                buttonLeanSpeed += Mathf.Sign(buttonLeanSpeed) * (1 + speed) * Time.deltaTime;
 
                 tiltAnchor.localEulerAngles = new Vector3(0, 0, buttonLean);
 
                 Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
-                if (Mathf.Abs(buttonLean) > 45f)
+                if (Mathf.Abs(buttonLean) > 75f)
                 {
-                    Debug.Log("Fall");
                     Physics.IgnoreLayerCollision(LayerMask.NameToLayer("ObstaclePlatform"), LayerMask.NameToLayer("Player"), true);
                 }
                 else
@@ -208,9 +209,9 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Respawn"))
         {
-            RespawnPosition = gameObject.transform.position;
+            RespawnPosition = other.gameObject.transform.position;
         }
-        else if (other.gameObject.CompareTag("EditorOnly"))
+        else if (other.gameObject.CompareTag("EndGame"))
         {
             ending.SetActive(true);
         }
