@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
 
     private Queue<float> prevHeights;
 
+    [SerializeField]
+    FloatUI thoughtBubble;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -183,7 +186,15 @@ public class PlayerController : MonoBehaviour
     {
         if (LayerMask.NameToLayer("EventTrigger") == other.gameObject.layer)
         {
-            bird.SetActive(true);
+            if (other.gameObject.name.CompareTo("BirdTrigger") == 0)
+            {
+                bird.SetActive(true);
+            }
+            else if (other.gameObject.name.CompareTo("Thoughtbubble_Zone") == 0)
+            {
+                Destroy(other.GetComponent<Collider>());
+                thoughtBubble.Activate(other.GetComponent<ThoughtTrigger>());
+            }
         }
 
         if (other.gameObject.CompareTag("Finish"))
