@@ -7,6 +7,8 @@ public class CameraFollow : MonoBehaviour
     public Transform targetUp;
     public Transform targetBack;
 
+    public LayerMask visibleMeshes;
+
     public PlayerController player;
     
     void Update()
@@ -19,15 +21,17 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            /*
+            ///*
             RaycastHit rayCastInfo;
-            if (Physics.Raycast(target.position, player.transform.position - target.position, out rayCastInfo, 2)) {
+            Debug.DrawRay(target.position, player.transform.position - target.position, Color.blue);
+            if (Physics.Raycast(player.transform.position, target.position - player.transform.position, out rayCastInfo, 2, visibleMeshes)) {
+                Debug.Log("Hello");
                 if (rayCastInfo.transform.gameObject.layer != LayerMask.NameToLayer("Player"))
                 {
                     activeTarget = targetUp;
                 }
             }
-            */
+            //*/
         }
 
         transform.position = Vector3.Lerp(transform.position, activeTarget.position, 5*Time.deltaTime);

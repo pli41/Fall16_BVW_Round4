@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
         footR = controller.Foot_Right.transform;
         prevHeights = new Queue<float>();
         canMove = true;
+
+        angle = transform.eulerAngles.y;
     }
 
     void Update()
@@ -137,7 +139,7 @@ public class PlayerController : MonoBehaviour
                 rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
                 //rigidbody.AddForce(Quaternion.Euler(0, angle, 0) * Vector3.forward * speed);
             }
-            else
+            else // Wire controls
             {
                 // Accelerate/Decelerate the button
                 if (zAxis < 0) // Forward
@@ -156,21 +158,23 @@ public class PlayerController : MonoBehaviour
                 Debug.Log(xAxis);
 
                 buttonLean += buttonLeanSpeed * Time.deltaTime;
+                buttonLean = Mathf.Clamp(buttonLean, -75, 75);
                 buttonLeanSpeed -= xAxis * 100 * Time.deltaTime;
                 buttonLeanSpeed += Mathf.Sign(buttonLeanSpeed) * (1 + speed) * Time.deltaTime;
 
                 tiltAnchor.localEulerAngles = new Vector3(0, 0, buttonLean);
 
                 Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
+                /*
                 if (Mathf.Abs(buttonLean) > 75f)
                 {
                     Physics.IgnoreLayerCollision(LayerMask.NameToLayer("ObstaclePlatform"), LayerMask.NameToLayer("Player"), true);
                 }
                 else
-                {
-                    transform.eulerAngles = new Vector3(0, wireTransform.eulerAngles.y, 0);
-                    rigidbody.velocity = wireTransform.forward * speed + gravity;
-                }
+                {*/
+                transform.eulerAngles = new Vector3(0, wireTransform.eulerAngles.y, 0);
+                rigidbody.velocity = wireTransform.forward * speed + gravity;
+                //}
 
                 // Spin the button based on the speed
                 buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
@@ -190,6 +194,7 @@ public class PlayerController : MonoBehaviour
     {
         if (LayerMask.NameToLayer("EventTrigger") == other.gameObject.layer)
         {
+            Debug.Log(other.gameObject.name);
             if (other.gameObject.name.CompareTo("BirdTrigger") == 0)
             {
                 bird.SetActive(true);

@@ -35,6 +35,8 @@ public class BirdMovement : MonoBehaviour {
 
     void OnTriggerEnter (Collider other)
     {
+        Debug.Log(gameObject.name);
+        Debug.DrawLine(transform.position, Vector3.up * 10000, Color.blue, 50000);
         player.transform.parent = transform;
         player.GetComponent<Collider>().enabled = false;
         player.GetComponent<Rigidbody>().isKinematic = true;
