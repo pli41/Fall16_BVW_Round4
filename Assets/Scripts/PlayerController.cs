@@ -129,10 +129,13 @@ public class PlayerController : MonoBehaviour
                 buttonSpin = (buttonSpin + 360 * speed * Time.deltaTime) % 360;
                 buttonAnchor.localEulerAngles = Vector3.right * buttonSpin;
 
+                // Rotate the button
+                transform.eulerAngles = Vector3.up * angle;
+
                 // Set the speed of the button
                 Vector3 gravity = Vector3.Project(rigidbody.velocity, Vector3.down);
-                transform.eulerAngles = Vector3.up * angle;
                 rigidbody.velocity = Quaternion.Euler(0, angle, 0) * Vector3.forward * speed + gravity;
+                //rigidbody.AddForce(Quaternion.Euler(0, angle, 0) * Vector3.forward * speed);
             }
             else
             {
