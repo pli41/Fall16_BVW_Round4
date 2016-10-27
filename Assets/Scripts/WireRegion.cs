@@ -15,6 +15,8 @@ public class WireRegion : MonoBehaviour {
 
     void OnTriggerExit(Collider c)
     {
-        c.GetComponent<PlayerController>().wireTransform = null;
+        PlayerController p = c.GetComponent<PlayerController>();
+        p.wireTransform = null;
+        p.angle = Quaternion.FromToRotation(Vector3.forward, transform.forward).eulerAngles.y;
     }
 }
