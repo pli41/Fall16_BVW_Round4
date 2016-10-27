@@ -7,6 +7,7 @@ public class Wind : MonoBehaviour {
 
     public Curve activationCurve;
     public ParticleSystem particles;
+    public float strength = 50;
 
 	void Start () {
 	    
@@ -23,7 +24,7 @@ public class Wind : MonoBehaviour {
     {
         if (IsActive())
         {
-            c.GetComponent<Rigidbody>().AddForce(transform.forward * 50);
+            c.GetComponent<Rigidbody>().AddForce(transform.forward * strength);
         }
     }
 

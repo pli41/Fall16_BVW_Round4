@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6dd5140ad19139a4d940e6cb00ae6d87
-timeCreated: 1477527836
+guid: ca3ddc4dc57b89f4298f47706d5be883
+timeCreated: 1477526139
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Nest
+    4300000: Building1
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -35,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 175
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
