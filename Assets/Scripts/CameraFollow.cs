@@ -11,6 +11,11 @@ public class CameraFollow : MonoBehaviour
 
     public PlayerController player;
     
+    void Start()
+    {
+        transform.parent = null;
+    }
+
     void Update()
     {
         Transform activeTarget = target;
