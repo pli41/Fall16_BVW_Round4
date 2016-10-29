@@ -5,21 +5,20 @@ using UsefulThings;
 public class MusicController : MonoBehaviour {
 
     static int GameState;
-
-	// Use this for initialization
+    
 	void Start () {
         GameState = 0;
         SfxManager.PlayLoop(3);
+        Debug.Log("Hello!");
 	}
 	
-	// Update is called once per frame
 	void Update () {
     }
 
     void OnTriggerEnter(Collider other)
     {
         GetComponent<Collider>().enabled = false;
-        StartCoroutine(FadeLoops(3 + GameState, 4 + GameState, 15));
+        StartCoroutine(FadeLoops(3 + GameState, 4 + GameState, 1));
         GameState++;
     }
 
