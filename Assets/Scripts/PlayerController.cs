@@ -192,21 +192,17 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (LayerMask.NameToLayer("EventTrigger") == other.gameObject.layer)
+        if (LayerMask.NameToLayer("BirdTrigger") == other.gameObject.layer)
         {
-            Debug.Log(other.gameObject.name);
-            if (other.gameObject.name.CompareTo("BirdTrigger") == 0)
-            {
-                bird.SetActive(true);
-            }
+            bird.SetActive(true);
+            /*
             else if (other.gameObject.name.CompareTo("Thoughtbubble_Zone") == 0)
             {
                 Destroy(other.GetComponent<Collider>());
                 thoughtBubble.Activate(other.GetComponent<ThoughtTrigger>());
-            }
+            }*/
         }
-
-        if (other.gameObject.CompareTag("Finish"))
+        else if (other.gameObject.CompareTag("Finish"))
         {
             speed = 0;
             buttonLean = 0;
@@ -214,8 +210,7 @@ public class PlayerController : MonoBehaviour
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("ObstaclePlatform"), LayerMask.NameToLayer("Player"), false);
             gameObject.transform.position = RespawnPosition;
         }
-
-        if (other.gameObject.CompareTag("Respawn"))
+        else if (other.gameObject.CompareTag("Respawn"))
         {
             RespawnPosition = other.gameObject.transform.position;
         }
