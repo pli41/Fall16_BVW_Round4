@@ -192,8 +192,10 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (LayerMask.NameToLayer("BirdTrigger") == other.gameObject.layer)
         {
+            Debug.Log("Hello");
             bird.SetActive(true);
             /*
             else if (other.gameObject.name.CompareTo("Thoughtbubble_Zone") == 0)

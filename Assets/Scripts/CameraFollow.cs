@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
         if (forcedCamera != null)
         {
             activeTarget = forcedCamera.transform;
-            forcedCamera.transform.position = player.transform.position - forcedCamera.transform.forward * 5;
+            forcedCamera.transform.position = player.transform.position - forcedCamera.transform.forward * 2;
             targetFov = forcedCamera.fieldOfView;
         }
         else if (!player.canMove)
