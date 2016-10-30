@@ -105,6 +105,7 @@ ModelImporter:
     2300046: Tabletop
     2300048: win1_frame
     2300050: win1_glass
+    2300052: //RootNode
     3300000: billboard
     3300002: Body
     3300004: body
@@ -131,6 +132,7 @@ ModelImporter:
     3300046: Tabletop
     3300048: win1_frame
     3300050: win1_glass
+    3300052: //RootNode
     4300000: Body
     4300002: tip
     4300004: body
@@ -157,6 +159,7 @@ ModelImporter:
     4300046: pasted__pasted__pCube2
     4300048: pCube2
     4300050: Tabletop
+    4300052: TailorHouse1
     9500000: //RootNode
   materials:
     importMaterials: 1
