@@ -43,7 +43,7 @@ public class FloatUI : MonoBehaviour {
 
     public void Activate(ThoughtTrigger bubble)
     {
-
+        Debug.Log("Activate");
         SetUIElements(true);
         bubbleImgae.sprite = PickImage(bubble.imageName);
         Invoke("Deactivate", stayTime);

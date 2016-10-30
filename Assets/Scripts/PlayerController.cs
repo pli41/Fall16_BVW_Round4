@@ -197,12 +197,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Hello");
             bird.SetActive(true);
-            /*
-            else if (other.gameObject.name.CompareTo("Thoughtbubble_Zone") == 0)
-            {
-                Destroy(other.GetComponent<Collider>());
-                thoughtBubble.Activate(other.GetComponent<ThoughtTrigger>());
-            }*/
+            
+            
         }
         else if (other.gameObject.CompareTag("Finish"))
         {
@@ -219,6 +215,11 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("EndGame"))
         {
             ending.SetActive(true);
+        }
+        else if (other.gameObject.name.CompareTo("Thoughtbubble_Zone") == 0)
+        {
+            Destroy(other.GetComponent<Collider>());
+            thoughtBubble.Activate(other.GetComponent<ThoughtTrigger>());
         }
     }
 
