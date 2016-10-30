@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ThoughtTrigger : MonoBehaviour {
 
-    public string imageName;
+    public Vector2 imageOffset;
+    public string param_anim;
 
 	// Use this for initialization
 	void Start () {

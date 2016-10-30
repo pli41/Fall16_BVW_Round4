@@ -8,16 +8,10 @@ public class FloatUI : MonoBehaviour {
     Transform target;
 
     [SerializeField]
-    Vector3 offset;
-
-    [SerializeField]
     Vector2 offset_viewport;
 
     [SerializeField]
     MaskableGraphic[] UIElements;
-
-    [SerializeField]
-    Transform camera;
 
     [SerializeField]
     float stayTime;
@@ -26,14 +20,17 @@ public class FloatUI : MonoBehaviour {
     Canvas canvas;
 
     [SerializeField]
-    Image bubbleImgae;
+    Image bubbleImage;
 
-    [SerializeField]
-    Sprite[] bubbleImages;
+    Vector2 currentOffset;
+    string currentParam_anim;
+
+    Animator imageAnim;
+
 
 	// Use this for initialization
 	void Start () {
-        
+        imageAnim = bubbleImage.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -41,11 +38,13 @@ public class FloatUI : MonoBehaviour {
 	
 	}
 
-    public void Activate(ThoughtTrigger bubble)
+    public void Activate(ThoughtTrigger zone)
     {
         Debug.Log("Activate");
         SetUIElements(true);
-        bubbleImgae.sprite = PickImage(bubble.imageName);
+        currentParam_anim = zone.param_anim;
+        imageAnim.SetBool(currentParam_anim, true);
+        currentOffset = zone.imageOffset;
         Invoke("Deactivate", stayTime);
         StartCoroutine("FollowTarget");
     }
@@ -53,6 +52,7 @@ public class FloatUI : MonoBehaviour {
     public void Deactivate()
     {
         SetUIElements(false);
+        imageAnim.SetBool(currentParam_anim, false);
         StopCoroutine("FollowTarget");
     }
 
@@ -80,7 +80,7 @@ public class FloatUI : MonoBehaviour {
             float x = Camera.main.WorldToScreenPoint(target.position).x / Screen.width;
             float y = Camera.main.WorldToScreenPoint(target.position).y / Screen.height;
             pos = new Vector2(width * x - width / 2, y * height - height / 2);
-            pos += offset_viewport;
+            pos += offset_viewport + currentOffset;
             GetComponent<RectTransform>().anchoredPosition = pos;
 
             yield return null;
@@ -95,24 +95,4 @@ public class FloatUI : MonoBehaviour {
         }
     }
 
-    Sprite PickImage(string imageName)
-    {
-        Sprite sprite = null;
-        switch (imageName)
-        {
-            case "box":
-                sprite = bubbleImages[0];
-                break;
-            case "dumpster":
-                sprite = bubbleImages[1];
-                break;
-            case "ledge":
-                sprite = bubbleImages[2];
-                break;
-            case "onthewire":
-                sprite = bubbleImages[3];
-                break;
-        }
-        return sprite;
-    }
 }

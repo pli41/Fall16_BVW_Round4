@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("EndGame"))
         {
+            Debug.Log(other.gameObject.name);
             ending.SetActive(true);
         }
         else if (other.gameObject.name.CompareTo("Thoughtbubble_Zone") == 0)
