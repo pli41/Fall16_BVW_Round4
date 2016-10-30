@@ -24,6 +24,24 @@ ModelImporter:
     100032: tip
     100034: Window
     100036: Windows
+    100038: balcony_2nd
+    100040: body_2nd
+    100042: Floor_2nd
+    100044: pasted__pasted__pCube2
+    100046: pasted__pasted__pCube3
+    100048: pasted__pCube2
+    100050: pasted__win1_frame
+    100052: pasted__win1_glass
+    100054: pCube2
+    100056: roof_2nd
+    100058: Shirt
+    100060: Table
+    100062: Tabletop
+    100064: TailorHouse
+    100066: win1
+    100068: win1_frame
+    100070: win1_glass
+    100072: win2
     400000: billboard
     400002: Body
     400004: body
@@ -43,6 +61,24 @@ ModelImporter:
     400032: tip
     400034: Window
     400036: Windows
+    400038: balcony_2nd
+    400040: body_2nd
+    400042: Floor_2nd
+    400044: pasted__pasted__pCube2
+    400046: pasted__pasted__pCube3
+    400048: pasted__pCube2
+    400050: pasted__win1_frame
+    400052: pasted__win1_glass
+    400054: pCube2
+    400056: roof_2nd
+    400058: Shirt
+    400060: Table
+    400062: Tabletop
+    400064: TailorHouse
+    400066: win1
+    400068: win1_frame
+    400070: win1_glass
+    400072: win2
     2300000: billboard
     2300002: Body
     2300004: body
@@ -56,6 +92,19 @@ ModelImporter:
     2300020: Stick
     2300022: tip
     2300024: Window
+    2300026: balcony_2nd
+    2300028: body_2nd
+    2300030: pasted__pasted__pCube2
+    2300032: pasted__pasted__pCube3
+    2300034: pasted__pCube2
+    2300036: pasted__win1_frame
+    2300038: pasted__win1_glass
+    2300040: pCube2
+    2300042: roof_2nd
+    2300044: Shirt
+    2300046: Tabletop
+    2300048: win1_frame
+    2300050: win1_glass
     3300000: billboard
     3300002: Body
     3300004: body
@@ -69,6 +118,19 @@ ModelImporter:
     3300020: Stick
     3300022: tip
     3300024: Window
+    3300026: balcony_2nd
+    3300028: body_2nd
+    3300030: pasted__pasted__pCube2
+    3300032: pasted__pasted__pCube3
+    3300034: pasted__pCube2
+    3300036: pasted__win1_frame
+    3300038: pasted__win1_glass
+    3300040: pCube2
+    3300042: roof_2nd
+    3300044: Shirt
+    3300046: Tabletop
+    3300048: win1_frame
+    3300050: win1_glass
     4300000: Body
     4300002: tip
     4300004: body
@@ -82,6 +144,19 @@ ModelImporter:
     4300020: polySurface7
     4300022: billboard
     4300024: logo1
+    4300026: win1_glass
+    4300028: win1_frame
+    4300030: pasted__win1_glass
+    4300032: pasted__win1_frame
+    4300034: balcony_2nd
+    4300036: body_2nd
+    4300038: roof_2nd
+    4300040: Shirt
+    4300042: pasted__pCube2
+    4300044: pasted__pasted__pCube3
+    4300046: pasted__pasted__pCube2
+    4300048: pCube2
+    4300050: Tabletop
     9500000: //RootNode
   materials:
     importMaterials: 1

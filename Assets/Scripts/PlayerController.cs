@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log(xAxis);
 
                 buttonLean += buttonLeanSpeed * Time.deltaTime;
-                buttonLean = Mathf.Clamp(buttonLean, -75, 75);
+                buttonLean = Mathf.Clamp(buttonLean, -60, 60);
                 buttonLeanSpeed -= xAxis * 100 * Time.deltaTime;
                 buttonLeanSpeed += Mathf.Sign(buttonLeanSpeed) * (1 + speed) * Time.deltaTime;
 
@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            angle = Mathf.Clamp(angle + xAxis * 180 * Time.deltaTime, 150, 210);
+            angle = Mathf.Clamp(angle + xAxis * 180 * Time.deltaTime, 150, 250);
             speed = 0;
             transform.eulerAngles = Vector3.up * angle;
             rigidbody.velocity = Vector3.zero;
