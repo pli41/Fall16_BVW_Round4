@@ -1,0 +1,105 @@
+Initialize engine version: 5.4.0f3 (a6d8d714de6f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro M4000 (ID=0x13f1)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\OpenCvSharp.dll (this message is harmless)
+Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\OpenCvSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\ICSharpCode.SharpZipLib.dll (this message is harmless)
+Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\ICSharpCode.SharpZipLib.dll into Unity Child Domain
+- Completed reload, in  0.329 seconds
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.598235 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3934 -> priority: 1 
+  Thread -> id: 1e34 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.563087 ms
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinect10.dll
+Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+x32-architecture detected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Could not delete file: ./KinectUnityAddin.dll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OpenNI2-folder not found (check OPENNI2_REDIST).
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+KM is restarting level...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 9366.
+Total: 1.231325 ms (FindLiveObjects: 0.311887 ms CreateObjectMapping: 0.141821 ms MarkObjects: 0.760488 ms  DeleteObjects: 0.016225 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 9366.
+Total: 2.950012 ms (FindLiveObjects: 2.055814 ms CreateObjectMapping: 0.118084 ms MarkObjects: 0.767399 ms  DeleteObjects: 0.007812 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.428396 ms
+No sensor found. Make sure you have installed the SDK and the sensor is connected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Exception: No sensor found. Make sure you have installed the SDK and the sensor is connected.
+  at KinectManager.StartKinect () [0x00000] in <filename unknown>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+KinectManager:StartKinect()
+KinectManager:Awake()
+ 
+(Filename:  Line: -1)
+
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 9366.
+Total: 1.241541 ms (FindLiveObjects: 0.329915 ms CreateObjectMapping: 0.103361 ms MarkObjects: 0.794442 ms  DeleteObjects: 0.012920 ms)
+
+Hello!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Hello!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
