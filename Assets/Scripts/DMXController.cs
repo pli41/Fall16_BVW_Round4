@@ -24,7 +24,8 @@ public class DMXController : MonoBehaviour {
 	private static DMX dmx;
 
 	// Use this for initialization
-	static void Start () {
+	void Start () {
+        Debug.Log("setup DMX");
 		dmx = new DMX(ComPort);
 		// Cycle through the color wheel
 	}
