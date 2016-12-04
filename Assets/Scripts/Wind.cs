@@ -28,6 +28,16 @@ public class Wind : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter(Collider c)
+    {
+        DMXController.SetFan(true);
+    }
+
+    void OnTriggerExit(Collider c)
+    {
+        DMXController.SetFan(false);
+    }
+
     private bool IsActive()
     {
         return activationCurve.Evaluate(Time.time) > 0.5f;
