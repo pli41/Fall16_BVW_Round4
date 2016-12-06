@@ -1,59 +1,39 @@
-Initialize engine version: 5.4.0f3 (a6d8d714de6f)
+Initialize engine version: 5.4.2f2 (b7e030c65c9b)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA Quadro M4000 (ID=0x13f1)
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
     Vendor:   NVIDIA
-    VRAM:     3072 MB
+    VRAM:     2016 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\OpenCvSharp.dll (this message is harmless)
-Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\OpenCvSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\ICSharpCode.SharpZipLib.dll (this message is harmless)
-Loading C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\ICSharpCode.SharpZipLib.dll into Unity Child Domain
-- Completed reload, in  0.329 seconds
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\demo\Desktop\Team57\Fall16_BVW_Round4\team57Game_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\OpenCvSharp.dll (this message is harmless)
+Loading C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\OpenCvSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\ICSharpCode.SharpZipLib.dll (this message is harmless)
+Loading C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\ICSharpCode.SharpZipLib.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\lipei_000\Documents\GitHub\Fall16_BVW_Round4\team57Game_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.598235 ms
+UnloadTime: 0.783364 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3934 -> priority: 1 
-  Thread -> id: 1e34 -> priority: 1 
+  Thread -> id: 2970 -> priority: 1 
+  Thread -> id: 2e28 -> priority: 1 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 8.563087 ms
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinect10.dll
-Fallback handler could not load library C:/Users/demo/Desktop/Team57/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+UnloadTime: 3.780373 ms
 x32-architecture detected.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Could not delete file: ./KinectUnityAddin.dll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -65,17 +45,58 @@ KM is restarting level...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+Hello!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 9366.
-Total: 1.231325 ms (FindLiveObjects: 0.311887 ms CreateObjectMapping: 0.141821 ms MarkObjects: 0.760488 ms  DeleteObjects: 0.016225 ms)
+Hello!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+setup DMX
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 9366.
-Total: 2.950012 ms (FindLiveObjects: 2.055814 ms CreateObjectMapping: 0.118084 ms MarkObjects: 0.767399 ms  DeleteObjects: 0.007812 ms)
+Hello!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 9501.
+Total: 1.927468 ms (FindLiveObjects: 0.343533 ms CreateObjectMapping: 0.247838 ms MarkObjects: 0.911056 ms  DeleteObjects: 0.420511 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.428396 ms
+UnloadTime: 4.730069 ms
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/KinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\KinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/KinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/KinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\KinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/KinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinectUnityAddin
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\Kinect10
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/.\libKinect10.dll
+Fallback handler could not load library C:/Users/lipei_000/Documents/GitHub/Fall16_BVW_Round4/team57Game_Data/Mono/libKinect10.dll
 No sensor found. Make sure you have installed the SDK and the sensor is connected.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
@@ -92,12 +113,125 @@ KinectManager:Awake()
 (Filename:  Line: -1)
 
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 9366.
-Total: 1.241541 ms (FindLiveObjects: 0.329915 ms CreateObjectMapping: 0.103361 ms MarkObjects: 0.794442 ms  DeleteObjects: 0.012920 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 1.263646 ms (FindLiveObjects: 0.328137 ms CreateObjectMapping: 0.121051 ms MarkObjects: 0.800570 ms  DeleteObjects: 0.013584 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.238618 ms
+x32-architecture detected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OpenNI2-folder not found (check OPENNI2_REDIST).
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+KM is restarting level...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 1.154971 ms (FindLiveObjects: 0.284063 ms CreateObjectMapping: 0.117127 ms MarkObjects: 0.739592 ms  DeleteObjects: 0.013886 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 2.748566 ms (FindLiveObjects: 1.648536 ms CreateObjectMapping: 0.137956 ms MarkObjects: 0.951809 ms  DeleteObjects: 0.009961 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.419331 ms
+No sensor found. Make sure you have installed the SDK and the sensor is connected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Exception: No sensor found. Make sure you have installed the SDK and the sensor is connected.
+  at KinectManager.StartKinect () [0x00000] in <filename unknown>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+KinectManager:StartKinect()
+KinectManager:Awake()
+ 
+(Filename:  Line: -1)
+
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 1.235873 ms (FindLiveObjects: 0.311534 ms CreateObjectMapping: 0.120146 ms MarkObjects: 0.789099 ms  DeleteObjects: 0.014489 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 1.811246 ms (FindLiveObjects: 0.944564 ms CreateObjectMapping: 0.152144 ms MarkObjects: 0.705178 ms  DeleteObjects: 0.009056 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.690414 ms
+x32-architecture detected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OpenNI2-folder not found (check OPENNI2_REDIST).
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+KM is restarting level...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 1.981503 ms (FindLiveObjects: 0.557260 ms CreateObjectMapping: 0.195010 ms MarkObjects: 1.211120 ms  DeleteObjects: 0.016904 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 4.012514 ms (FindLiveObjects: 2.040670 ms CreateObjectMapping: 0.236065 ms MarkObjects: 1.723099 ms  DeleteObjects: 0.011471 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.767090 ms
+No sensor found. Make sure you have installed the SDK and the sensor is connected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Exception: No sensor found. Make sure you have installed the SDK and the sensor is connected.
+  at KinectManager.StartKinect () [0x00000] in <filename unknown>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+KinectManager:StartKinect()
+KinectManager:Awake()
+ 
+(Filename:  Line: -1)
+
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 9456.
+Total: 1.459260 ms (FindLiveObjects: 0.317571 ms CreateObjectMapping: 0.122259 ms MarkObjects: 1.004034 ms  DeleteObjects: 0.014791 ms)
 
 Hello!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Hello!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+setup DMX
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+IOException: Access is denied.
+
+  at System.IO.Ports.WinSerialStream.ReportIOError (System.String optional_arg) [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.WinSerialStream..ctor (System.String port_name, Int32 baud_rate, Int32 data_bits, Parity parity, StopBits sb, Boolean dtr_enable, Boolean rts_enable, Handshake hs, Int32 read_timeout, Int32 write_timeout, Int32 read_buffer_size, Int32 write_buffer_size) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.WinSerialStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at ETC.Platforms.DMX..ctor (System.String COMport) [0x00000] in <filename unknown>:0 
+  at DMXController.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
 Hello!
  
